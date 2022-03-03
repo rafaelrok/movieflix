@@ -3,6 +3,8 @@ package com.rafaelvieira.movieflix.entities;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Set;
+
 public class MovieTests {
 
 	@Test
@@ -14,15 +16,16 @@ public class MovieTests {
 		entity.setSubTitle("Subtitle");
 		entity.setSynopsis("Synopsis");
 		entity.setYear(2021);
-		entity.setImgUri("https://imgurl.com/img.png");
+		entity.setImgUrl("https://imgurl.com/img.png");
 		entity.setGenre(new Genre());
-	
+
+
 		Assertions.assertNotNull(entity.getId());
 		Assertions.assertNotNull(entity.getTitle());
 		Assertions.assertNotNull(entity.getSubTitle());
 		Assertions.assertNotNull(entity.getSynopsis());
 		Assertions.assertNotNull(entity.getYear());
-		Assertions.assertNotNull(entity.getImgUri());
+		Assertions.assertNotNull(entity.getImgUrl());
 		Assertions.assertNotNull(entity.getGenre());
 		Assertions.assertEquals(0, entity.getReviews().size());
 	}

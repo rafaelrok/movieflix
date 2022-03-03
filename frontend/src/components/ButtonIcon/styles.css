@@ -1,0 +1,31 @@
+.btn-container {
+  display: flex;
+}
+
+.btn-container button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 50px);
+  height: 65px;
+  margin-right: 50px;
+  margin-left: 50px;
+  background-color: #ffc700;
+}
+
+.btn h6 {
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 576px) {
+  .btn h6 {
+    font-size: 24px;
+  }
+
+  .btn-container button {
+    width: calc(100% - 70px);
+    width: 100%;
+  }
+}

@@ -4,16 +4,11 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "tb_genre")
-public class Genre implements Serializable {
+public class Genre implements Serializable{
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -24,33 +19,34 @@ public class Genre implements Serializable {
     @OneToMany(mappedBy = "genre")
     private Set<Movie> movies = new HashSet<>();
 
-    public Genre() {}
+    public Genre() {
 
+    }
     public Genre(Long id, String name) {
         this.id = id;
         this.name = name;
-    }
 
+    }
     public Long getId() {
         return id;
-    }
 
+    }
     public void setId(Long id) {
         this.id = id;
-    }
 
+    }
     public String getName() {
         return name;
-    }
 
+    }
     public void setName(String name) {
         this.name = name;
-    }
 
+    }
     public Set<Movie> getMovies() {
         return movies;
-    }
 
+    }
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -58,7 +54,6 @@ public class Genre implements Serializable {
         result = prime * result + ((id == null) ? 0 : id.hashCode());
         return result;
     }
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -75,4 +70,6 @@ public class Genre implements Serializable {
             return false;
         return true;
     }
+
+
 }

@@ -1,0 +1,85 @@
+.home-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.login-card {
+  padding: 20px;
+  font-size: 16px;
+  color: #fff;
+  height: 573px;
+  width: 479px;
+}
+
+.auth-banner-container {
+  display: none;
+}
+
+.login-card h1 {
+  font-size: 2.5em;
+  font-weight: normal;
+  text-align: center;
+  letter-spacing: -0.015em;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 70px;
+  margin-bottom: 35px;
+}
+
+.login-submit {
+  margin-bottom: 133px;
+  width: 100%;
+  margin-top: 75px;
+}
+
+@media (min-width: 576px) {
+  .login-card {
+    padding: 25px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .home-container {
+    padding: 40px;
+    margin-right: 116px;
+  }
+
+  .auth-banner-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    width: 500px;
+  }
+
+  .auth-banner-container h1 {
+    font-size: 40px;
+    letter-spacing: -0.015em;
+    color: #ffffff;
+    margin-bottom: 15px;
+    margin-left: 30px;
+  }
+
+  .auth-banner-container p {
+    font-size: 18px;
+    letter-spacing: -0.015em;
+    color: #ffffff;
+    margin-left: 30px;
+    margin-bottom: 50px;
+    margin-right: 405px;
+  }
+}
+@media (min-width: 1400px) {
+  .auth-banner-container {
+    width: 950px;
+  }
+
+  .auth-banner-container h1 {
+    font-size: 55px;
+    margin-bottom: 25px;
+  }
+
+  .auth-banner-container p {
+    font-size: 24px;
+  }
+}

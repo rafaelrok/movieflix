@@ -2,6 +2,7 @@ package com.rafaelvieira.movieflix.services;
 
 import com.rafaelvieira.movieflix.entities.User;
 import com.rafaelvieira.movieflix.repositories.UserRepository;
+import com.rafaelvieira.movieflix.services.exceptions.ResourceNotFoundException;
 import com.rafaelvieira.movieflix.services.exceptions.UnauthorizedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -22,6 +23,13 @@ public class AuthService {
         }
         catch (Exception e) {
             throw new UnauthorizedException("Invalid user");
+        }
+    }
+
+    public void validadeMenber(Long userId){
+        User user = authenticated();
+        if(!user.hasRole("ROLE_MEMBER")){
+            throw new ResourceNotFoundException("Invalid user");
         }
     }
 }

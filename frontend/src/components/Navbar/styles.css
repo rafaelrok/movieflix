@@ -1,0 +1,113 @@
+.navigation-clean-button {
+  background: #ffffff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #000000;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  margin-bottom: 0;
+}
+
+.icon-button-content {
+  margin-right: 5px;
+}
+
+@media (max-width: 767px) {
+  .navigation-clean-button {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-text span {
+    display: unset;
+    margin-right: 20px;
+  }
+}
+
+.navigation-clean-button .navbar-brand {
+  font-weight: bold;
+  color: inherit;
+}
+
+.navigation-clean-button .navbar-collapse,
+.navigation-clean-button .navbar-form {
+  border-top-color: #ddd;
+}
+
+.navigation-clean-button.navbar .navbar-nav > li > a {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.navigation-clean-button .actions {
+  margin-top: 7px;
+  margin-bottom: 0;
+}
+
+.navigation-clean-button .actions span {
+  display: none;
+  color: #000000;
+  font-size: 18px;
+}
+
+@media (min-width: 992px) {
+  .navigation-clean-button .actions span {
+    display: unset;
+    margin-right: 20px;
+  }
+}
+
+.navigation-clean-button .actions .login {
+  margin-right: 7px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.navigation-clean-button .actions .login:hover {
+  color: #ffffff;
+}
+
+.navigation-clean-button .action-button,
+.navigation-clean-button .action-button:active {
+  background: #ffc700;
+  border-radius: 15px;
+  color: #ffffff;
+  box-shadow: none;
+  border: 1px solid #000000;
+  text-shadow: none;
+  padding: 5px 20px;
+  transition: background-color 0.25s;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.navigation-clean-button .action-button:hover {
+  background: #ffffff;
+  font-weight: 400;
+  border: 1px solid #000000;
+}
+
+.navbar {
+  margin-bottom: 0;
+  background-color: #ffc700;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.btn.focus,
+.btn:focus,
+.btn:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #ffc700;
+  border: none;
+}
+
+.btn {
+  font-weight: 400;
+}

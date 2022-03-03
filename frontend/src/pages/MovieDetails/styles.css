@@ -1,0 +1,129 @@
+.movie-details-container {
+  padding: 10px;
+  font-size: 24px;
+}
+
+.movie-details-card {
+  padding: 10px;
+}
+
+.movie-review-card {
+  padding: 40px;
+  margin-top: 40px;
+}
+
+.img-container {
+  text-align: center;
+}
+
+.img-container img {
+  width: 500px;
+  height: 315px;
+  padding-top: 40px;
+}
+
+.info-container {
+  margin-bottom: 20px;
+}
+
+.info-container h1 {
+  padding-top: 40px;
+  color: #ffffff;
+  font-size: 36px;
+  letter-spacing: -0.015em;
+}
+
+.info-container h2 {
+  color: #ffc700;
+  font-size: 24px;
+  letter-spacing: -0.015em;
+}
+
+.info-container p {
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: -0.015em;
+}
+
+.description-container {
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  width: 500px;
+  height: 293px;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.description-container p {
+  color: #9e9e9e;
+  letter-spacing: -0.015em;
+  font-size: 16px;
+}
+
+.input-container {
+  margin-bottom: 20px;
+}
+
+.input-container input {
+  border: 1px solid #e1e1e1;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 18px;
+}
+
+.review-button {
+  color: #ffffff;
+  padding: 0px 300px 0px 300px;
+  margin-top: 25px;
+  font-size: 20px;
+}
+
+@media (min-width: 576px) {
+  .movie-details-container {
+    padding: 20px;
+    font-size: 32px;
+  }
+
+  .movie-details-card {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .movie-details-container {
+    padding-top: 40px;
+    padding-left: 134px;
+    padding-right: 145px;
+  }
+
+  .product-details-card {
+    padding: 40px;
+  }
+
+  .img-container img {
+    width: 50%;
+  }
+
+  .info-container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1200px) {
+  .info-container {
+    display: block;
+  }
+
+  .img-container img {
+    height: 315px;
+    width: 500px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .img-container img {
+    height: 315px;
+    width: 500px;
+  }
+}

@@ -1,0 +1,9 @@
+.movie-container .movie-filter-container {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.movie-filter-container .movie-filter-container {
+    margin-bottom: 20px;
+}
+
