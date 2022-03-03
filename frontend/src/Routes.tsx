@@ -17,11 +17,11 @@ const Routes = () => (
             <Route path="/" exact>
                 <Home />
             </Route>
-            <PrivateRoute path="/movies">
-                <MovieList />
-            </PrivateRoute>
             <PrivateRoute path="/movies/:movieId">
                 <MovieDetails />
+            </PrivateRoute>
+            <PrivateRoute path="/movies">
+                <MovieList />
             </PrivateRoute>
         </Switch>
     </Router>
