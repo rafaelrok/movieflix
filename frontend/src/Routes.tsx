@@ -5,7 +5,8 @@ import MovieList from "pages/MovieList";
 import { Router, Route, Switch } from "react-router-dom";
 import MovieDetails from "pages/MovieDetails";
 import history from "util/history";
-//import PrivateRoute from "components/PrivateRoute";
+import PrivateRoute from "components/PrivateRoute";
+
 
 
 const Routes = () => (
@@ -16,12 +17,12 @@ const Routes = () => (
             <Route path="/" exact>
                 <Home />
             </Route>
-            <Route path="/movies">
+            <PrivateRoute path="/movies">
                 <MovieList />
-            </Route>
-            <Route path="/movies/:movieId">
+            </PrivateRoute>
+            <PrivateRoute path="/movies/:movieId">
                 <MovieDetails />
-            </Route>
+            </PrivateRoute>
         </Switch>
     </Router>
 );
