@@ -1,16 +1,14 @@
-import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { Movie } from 'types/movie';
-import { BASE_URL } from 'util/requests';
 import MovieInfoLoader from './MovieInfoLoader';
 import MovieImageLoader from './MovieImageLoader';
-import ButtonIcon from 'components/ButtonIcon';
-
-import './styles.css';
 import MovieReview from './MovieReview';
 import { hasAnyRoles } from 'util/auth';
+import MovieForm from './MovieForm';
 
+import './styles.css';
+import { requestBackend } from '../../util/requests';
 
 type UrlParams = {
     movieId: string;
@@ -18,22 +16,21 @@ type UrlParams = {
 
 const MovieDetails = () => {
     const { movieId } = useParams<UrlParams>();
-
-    const [isLoading, setIsLoading] = useState(false);
     const [movie, setMovie] = useState<Movie>();
+    const [isLoading, setIsLoading] = useState(false);
 
-
-    useEffect(() => {
+    const getMovie = useCallback(() => {
         setIsLoading(true);
-        axios
-            .get(`${BASE_URL}/movies/${movieId}`)
-            .then((response) => {
-                setMovie(response.data);
-            })
+        requestBackend({ url: `/movies/${movieId}` })
+            .then(response => setMovie(response.data))
             .finally(() => {
                 setIsLoading(false);
             });
     }, [movieId]);
+
+    useEffect(() => {
+        getMovie()
+    }, [getMovie]);
 
     return (
         <div className="movie-details-container">
@@ -41,7 +38,6 @@ const MovieDetails = () => {
                 <div className="row">
                     <div className="col-xl-6">
                         {isLoading ? (
-
                             <MovieInfoLoader />
                         ) : (
                             <>
@@ -71,20 +67,9 @@ const MovieDetails = () => {
             </div>
             {hasAnyRoles(['ROLE_MEMBER']) &&
                 (
-                    <div className="base-card movie-review-card">
-                        <div className='input-container'>
-                            <input
-                                type="text"
-                                className="form-control base-input"
-                                id="inputReview"
-                                placeholder="Deixe sua avaliação aqui"
-                                name="avaliação"
-                            />
-                        </div>
-                        <div className="review-button">
-                            <ButtonIcon text="SALVAR AVALIAÇÃO" />
-                        </div>
-                    </div>
+                    < MovieForm
+                        movieId={movieId}
+                    />
                 )
             }
             <div className="base-card movie-review-card">
