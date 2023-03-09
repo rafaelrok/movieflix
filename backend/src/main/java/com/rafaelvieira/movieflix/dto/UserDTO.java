@@ -1,12 +1,24 @@
 package com.rafaelvieira.movieflix.dto;
 
 import com.rafaelvieira.movieflix.entities.User;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 
+/**
+ * @author rafae
+ */
+
+@Getter
+@Setter
+@AllArgsConstructor
+@RequiredArgsConstructor
 public class UserDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -21,15 +33,6 @@ public class UserDTO implements Serializable {
 	//Set<RoleDTO> roles = new HashSet<>();
 
 	//private List<ReviewDTO> reviews = new ArrayList<>();
-
-	
-	public UserDTO() {}
-
-	public UserDTO(Long id, String name, String email) {
-		this.id = id;
-		this.name = name;
-		this.email = email;
-	}
 	
 	public UserDTO(User entity) {
 		id = entity.getId();
@@ -45,30 +48,6 @@ public class UserDTO implements Serializable {
 
 	}
 	 */
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
 
 	/*
 	public Set<RoleDTO> getRoles() {

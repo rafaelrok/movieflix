@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "backend"
+		},
+		{
+			"path": "frontend"
+		}
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic",
+		"java.configuration.updateBuildConfiguration": "interactive"
+	}
+}

@@ -65,6 +65,18 @@
 			<artifactId>spring-security-oauth2-autoconfigure</artifactId>
 		</dependency>
 
+		<dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+		<dependency>
+			<groupId>com.theokanning.openai-gpt3-java</groupId>
+			<artifactId>client</artifactId>
+			<version>0.11.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
