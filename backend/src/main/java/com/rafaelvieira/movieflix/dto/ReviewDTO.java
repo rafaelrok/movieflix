@@ -1,5 +1,6 @@
 package com.rafaelvieira.movieflix.dto;
 import com.rafaelvieira.movieflix.entities.Review;
+import com.rafaelvieira.movieflix.entities.Score;
 import com.rafaelvieira.movieflix.entities.ScorePK;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -31,7 +32,7 @@ public class ReviewDTO implements Serializable {
 
     private UserDTO user;
 
-    private ScorePK score;
+    private Double score;
 
 
     public ReviewDTO(Review entity) {
@@ -39,6 +40,7 @@ public class ReviewDTO implements Serializable {
         text = entity.getText();
         user = new UserDTO(entity.getUser());
         movieId = entity.getMovie().getId();
+        score = entity.getMovie().getScore();
     }
 
 }

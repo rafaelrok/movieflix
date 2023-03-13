@@ -2,13 +2,11 @@ package com.rafaelvieira.movieflix.services;
 
 import com.rafaelvieira.movieflix.dto.MovieDTO;
 import com.rafaelvieira.movieflix.dto.ReviewDTO;
-import com.rafaelvieira.movieflix.dto.ScoreDTO;
 import com.rafaelvieira.movieflix.entities.Movie;
 import com.rafaelvieira.movieflix.entities.Score;
 import com.rafaelvieira.movieflix.entities.User;
 import com.rafaelvieira.movieflix.repositories.MovieRepository;
 import com.rafaelvieira.movieflix.repositories.ScoreRepository;
-import com.rafaelvieira.movieflix.repositories.UserRepository;
 import com.rafaelvieira.movieflix.services.exceptions.ResourceNotFoundException;
 import com.theokanning.openai.OpenAiService;
 import com.theokanning.openai.completion.CompletionRequest;
@@ -21,6 +19,8 @@ import javax.transaction.Transactional;
 import java.time.Duration;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static com.rafaelvieira.movieflix.enums.AssessmentOpenAi.COMMENT_RATING;
 
 /**
  * @author rafae
@@ -35,20 +35,16 @@ public class ScoreService {
     @Autowired
     private MovieRepository movieRepository;
 
-    @Autowired
-    private UserRepository userRepository;
 
     @Value("${openai.api.key}")
     private String openAIKey;
 
-    @Transactional
-    public MovieDTO saveScore(ScoreDTO scoreDTO, ReviewDTO reviewDTO, Movie movie) {
 
-        User user = userRepository.findByEmail(scoreDTO.getEmail());
+    @Transactional
+    public MovieDTO saveScoreWithReview(ReviewDTO reviewDTO, Movie movie, User user) {
+
         if (user == null) {
-            user = new User();
-            user.setEmail(scoreDTO.getEmail());
-            user = userRepository.saveAndFlush(user);
+            throw new ResourceNotFoundException("User not found");
         }
 
         Score score = new Score();
@@ -79,7 +75,7 @@ public class ScoreService {
 
             final CompletionRequest completionRequest = CompletionRequest.builder()
                     .model("text-davinci-003")
-                    .prompt("Avalie o sentimento nesse comentário com uma nota de 0.0(Negativo) a 5.0(Positivo). Comentário: " + reviewDTO.getText() + " Nota: ")
+                    .prompt(COMMENT_RATING + reviewDTO.getText() + " Nota: ")
                     .maxTokens(100)
                     .build();
 

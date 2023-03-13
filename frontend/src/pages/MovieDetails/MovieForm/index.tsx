@@ -86,7 +86,7 @@ const MovieForm = ({ movieId }: Props) => {
                     type="text"
                     className={`form-control base-input ${errors.text ? 'is-invalid' : ''}`}
                     id="floatingInput"
-                    placeholder="Digite sua avaliação"
+                    placeholder="Digite seu comentário"
                     name="text"
                 />
                 <input

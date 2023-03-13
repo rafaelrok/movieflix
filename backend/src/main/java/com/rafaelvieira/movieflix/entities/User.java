@@ -44,6 +44,9 @@ public class User implements UserDetails, Serializable {
 	@OneToMany(mappedBy = "user")
 	private List<Review> reviews = new ArrayList<>();
 
+	@OneToMany(mappedBy = "id.user")
+	private Set<Score> scores = new HashSet<>();
+
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return roles.stream().map(role -> new SimpleGrantedAuthority(role.getAuthority()))

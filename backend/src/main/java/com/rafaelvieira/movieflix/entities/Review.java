@@ -31,5 +31,4 @@ public class Review implements Serializable{
     @JoinColumn(name = "movie_id")
     private Movie movie;
 
-
 }
