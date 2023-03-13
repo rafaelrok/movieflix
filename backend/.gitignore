@@ -14,7 +14,8 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
-!**/main/resources/application.properties
+/mnt/d/desenvolvimento/devsuperior/movieflix/backend/src/main/resources/application-test.properties
+/mnt/d/desenvolvimento/devsuperior/movieflix/backend/src/main/resources/application.properties
 .idea
 *.iws
 *.iml
